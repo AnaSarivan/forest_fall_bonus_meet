@@ -1,7 +1,23 @@
 :root {
+    /* scene variables */
     --ambient-color: rgb(46, 11, 11);
     --widht: 1000px;
     --height: 700px;
+
+    /* fall animation variables */
+    --fall-start-top: 0;
+    --fall-start-left: 0;
+    --fall-start-rx: 0;
+    --fall-start-ry: 0;
+    --fall-start-rz: 0;
+    --fall-start-s: 0.4;
+    --fall-end-top: 100%;
+    --fall-end-left: 100%;
+    --fall-end-rx: 1turn;
+    --fall-end-ry: 1turn;
+    --fall-end-rz: 1turn;
+    --fall-end-end: 1.0;
+    --fall-duration: 10s;
 }
 
 body {
@@ -24,126 +40,50 @@ body {
 
 }
 
-#scene .leaf-1, .leaf-2, .leaf-3, .leaf-4, .leaf-5 {
+#scene .leaf {
+    width: calc( var(--widht) / 10 );
+    height: calc( var(--widht) / 10 ); 
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
     position: absolute;   
 }
-#scene .leaf-1 {
-    margin-left: calc( var(--widht) / 7);
-    width: calc( var(--widht) / 15 );
-    height: calc( var(--widht) / 15 ); 
-    background-image: url(image/leaf-1.png);
 
+#scene .leaf-1 {
+    background-image: url(image/leaf-1.png);  
+}
+#scene .leaf-2 {
+    background-image: url(image/leaf-2.png);  
+}
+#scene .leaf-3 {
+    background-image: url(image/leaf-3.png);  
+}
+#scene .leaf-4 {
+    background-image: url(image/leaf-4.png);  
+}
+#scene .leaf-5 {
+    background-image: url(image/leaf-5.png);  
+}
+
+
+#scene .fall {
     /* apply the animation */
-    animation: fall 10s ease-in-out;   
+    animation: fall var(--fall-duration) ease-in;   
     animation-fill-mode: forwards;
-    animation-iteration-count: infinite;
-   
+    
 }
 
 /* CSS Animations */
 @keyframes fall {
     from {
-        top: 0%;
-        transform: rotateZ(0)  rotateX(0) scale(0.2);
+        left: var(--fall-start-left);
+        top: var(--fall-start-top);
+        transform: rotateX(var(--fall-start-rx)) rotateY(var(--fall-start-ry))  rotateZ(var(--fall-start-rz)) scale(var(--fall-start-s));
     }
     to   {
-        top: 100%; 
-        transform: rotateZ(2turn) rotateX(5turn) scale(0.8);
-    }
-}
-
-#scene .leaf-2 {
-    margin-left: calc( var(--widht) / 4.5);
-    width: calc( var(--widht) / 20 );
-    height: calc( var(--widht) / 20 );   
-    background-image: url(image/leaf-2.png);
-   
-    animation: fall-2 10s linear;   
-    animation-fill-mode: forwards;
-    animation-iteration-count: 4;
-   
-}
-
-@keyframes fall-2 {
-    from {
-        top: 0%;
-        transform: rotateY(0)  rotateX(0) scale(0.1);
-    }
-    to   {
-        top: 100%; 
-        transform: rotateY(2turn) rotateX(4turn) scale(0.9);
-    }
-}
-
-#scene .leaf-3 {
-    margin-left: calc( var(--widht) / 3);
-    width: calc( var(--widht) / 20 );
-    height: calc( var(--widht) / 20 );   
-    background-image: url(image/leaf-3.png);   
-
-    animation: fall-3 11s ease-in-out;   
-    animation-fill-mode: forwards;
-    animation-iteration-count: infinite;
-   
-}
-
-@keyframes fall-3 {
-    from {
-        top: 0%;
-        transform: rotateZ(0)  rotateY(0) scale(0.3);
-    }
-    to   {
-        top: 100%; 
-        transform: rotateZ(3turn) rotateY(5turn) scale(0.9);
-    }
-}
-
-#scene .leaf-4 {
-    margin-left: calc( var(--widht) / 2);
-    width: calc( var(--widht) / 20 );
-    height: calc( var(--widht) / 20 );  
-    background-image: url(image/leaf-4.png);
-    
-    animation: fall-4 9s ease-in;   
-    animation-fill-mode: forwards;
-    animation-iteration-count: 4;
-   
-}
-
-@keyframes fall-4 {
-    from {
-        top: 0%;
-        transform: rotateZ(0)  rotateX(0) scale(0.2);
-    }
-    to   {
-        top: 100%; 
-        transform: rotateZ(3turn) rotateX(5turn) scale(1.0);
-    }
-}
-
-#scene .leaf-5 {
-    margin-left: calc( var(--widht) / 1.5);
-    width: calc( var(--widht) / 20 );
-    height: calc( var(--widht) / 20 );   
-    background-image: url(image/leaf-5.png);
-   
-    animation: fall-5 11s ease-in-out;   
-    animation-fill-mode: forwards;
-    animation-iteration-count: infinite;
-   
-}
-
-@keyframes fall-5 {
-    from {
-        top: 0%;
-        transform: rotateZ(0)  rotateX(0) scale(0.2);
-    }
-    to   {
-        top: 100%; 
-        transform: rotateZ(2turn) rotateX(5turn) scale(0.9);
+        left: var(--fall-end-left);
+        top: var(--fall-end-top);
+        transform: rotateX(var(--fall-end-rx)) rotateY(var(--fall-end-ry))  rotateZ(var(--fall-end-rz)) scale(var(--fall-end-s));
     }
 }
 
