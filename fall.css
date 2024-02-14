@@ -65,7 +65,6 @@ body {
     background-image: url(image/leaf-5.png);  
 }
 
-
 #scene .fall {
     /* apply the animation */
     animation: fall var(--fall-duration) ease-in;   
@@ -87,11 +86,3 @@ body {
     }
 }
 
-
-
-/* HW1: fint 4 more leaf models and clean the backround
-   
-   HW2: 
-
-
-*/
