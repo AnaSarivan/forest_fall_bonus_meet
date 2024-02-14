@@ -14,8 +14,7 @@ body {
     border: 1px solid white;
     width: var(--widht);
     height: var(--height);
-
-    background-image: url(iljan-sandstedt-PAcWOTBZ_s4-unsplash.jpg);
+    background-image: url(image/forest-fall.jpg);
     background-size: cover;
 
    position: absolute;
@@ -25,19 +24,17 @@ body {
 
 }
 
-#scene .leaf-1 {
-    margin-left: calc( var(--widht) / 7);
-    width: calc( var(--widht) / 15 );
-    height: calc( var(--widht) / 15 );
-    /* border: 1px solid yellowgreen;
-   background-color: rgb(241, 244, 235);*/
-
-    background-image: url(leaf-1.png);
+#scene .leaf-1, .leaf-2, .leaf-3, .leaf-4, .leaf-5 {
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
-
     position: absolute;   
+}
+#scene .leaf-1 {
+    margin-left: calc( var(--widht) / 7);
+    width: calc( var(--widht) / 15 );
+    height: calc( var(--widht) / 15 ); 
+    background-image: url(image/leaf-1.png);
 
     /* apply the animation */
     animation: fall 10s ease-in-out;   
@@ -61,15 +58,9 @@ body {
 #scene .leaf-2 {
     margin-left: calc( var(--widht) / 4.5);
     width: calc( var(--widht) / 20 );
-    height: calc( var(--widht) / 20 );
+    height: calc( var(--widht) / 20 );   
+    background-image: url(image/leaf-2.png);
    
-    background-image: url(leaf-2.png);
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: center;
-
-    position: absolute;   
-
     animation: fall-2 10s linear;   
     animation-fill-mode: forwards;
     animation-iteration-count: 4;
@@ -90,14 +81,8 @@ body {
 #scene .leaf-3 {
     margin-left: calc( var(--widht) / 3);
     width: calc( var(--widht) / 20 );
-    height: calc( var(--widht) / 20 );
-   
-    background-image: url(leaf-3.png);
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: center;
-
-    position: absolute;   
+    height: calc( var(--widht) / 20 );   
+    background-image: url(image/leaf-3.png);   
 
     animation: fall-3 11s ease-in-out;   
     animation-fill-mode: forwards;
@@ -119,15 +104,9 @@ body {
 #scene .leaf-4 {
     margin-left: calc( var(--widht) / 2);
     width: calc( var(--widht) / 20 );
-    height: calc( var(--widht) / 20 );
-  
-    background-image: url(leaf-4.png);
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: center;
-
-    position: absolute;   
-
+    height: calc( var(--widht) / 20 );  
+    background-image: url(image/leaf-4.png);
+    
     animation: fall-4 9s ease-in;   
     animation-fill-mode: forwards;
     animation-iteration-count: 4;
@@ -145,19 +124,12 @@ body {
     }
 }
 
-
 #scene .leaf-5 {
     margin-left: calc( var(--widht) / 1.5);
     width: calc( var(--widht) / 20 );
-    height: calc( var(--widht) / 20 );
+    height: calc( var(--widht) / 20 );   
+    background-image: url(image/leaf-5.png);
    
-    background-image: url(leaf-5.png);
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: center;
-
-    position: absolute;   
-
     animation: fall-5 11s ease-in-out;   
     animation-fill-mode: forwards;
     animation-iteration-count: infinite;
