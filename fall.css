@@ -10,14 +10,15 @@
     --fall-start-rx: 0;
     --fall-start-ry: 0;
     --fall-start-rz: 0;
-    --fall-start-s: 0.4;
+    --fall-start-s: 0.2;
     --fall-end-top: 100%;
     --fall-end-left: 100%;
     --fall-end-rx: 1turn;
     --fall-end-ry: 1turn;
     --fall-end-rz: 1turn;
-    --fall-end-end: 1.0;
-    --fall-duration: 10s;
+    --fall-end-s: 0.8;
+    --fall-duration: 20s;
+    --fall-delay: 0s;
 }
 
 body {
@@ -26,49 +27,58 @@ body {
     background-color: var(--ambient-color);
 }
 
-#scene {
+.container {
     border: 1px solid white;
     width: var(--widht);
     height: var(--height);
-    background-image: url(image/forest-fall.jpg);
-    background-size: cover;
-
-   position: absolute;
-   overflow: hidden;
-
-   perspective: 300px;
-
+    position: absolute;
+    overflow: hidden;
 }
 
-#scene .leaf {
-    width: calc( var(--widht) / 10 );
-    height: calc( var(--widht) / 10 ); 
+.background {
+    background-image: url(image/forest-fall.jpg);
+    background-size: cover;    
+} 
+
+.scene-mask-1 {   
+   perspective: 300px;
+
+   mask-image: url(image/forest-mask-1.svg);
+   mask-size: cover;
+}
+
+.leaf {
+    width: calc( var(--widht) / 20 );
+    height: calc( var(--widht) / 20 ); 
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
-    position: absolute;   
+    position: absolute;  
+    top: -30%; 
+
 }
 
-#scene .leaf-1 {
+.leaf-1 {
     background-image: url(image/leaf-1.png);  
 }
-#scene .leaf-2 {
+.leaf-2 {
     background-image: url(image/leaf-2.png);  
 }
-#scene .leaf-3 {
+.leaf-3 {
     background-image: url(image/leaf-3.png);  
 }
-#scene .leaf-4 {
+.leaf-4 {
     background-image: url(image/leaf-4.png);  
 }
-#scene .leaf-5 {
+.leaf-5 {
     background-image: url(image/leaf-5.png);  
 }
 
-#scene .fall {
+.fall {
     /* apply the animation */
-    animation: fall var(--fall-duration) ease-in;   
+    animation: fall var(--fall-duration) ease-in infinite;   
     animation-fill-mode: forwards;
+    animation-delay: var(--fall-delay);
     
 }
 
